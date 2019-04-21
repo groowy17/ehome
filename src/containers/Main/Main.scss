@@ -1,0 +1,54 @@
+.main {
+  &-container {
+    padding: 30px 40px;
+  }
+
+  &-h1 {
+    font-size: 27px;
+    margin: 0;
+  }
+
+  &-h2 {
+    font-size: 18px;
+    margin: 0 0 20px;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-areas:
+      'left right'
+      'center center';
+    grid-template-columns: 1fr 1fr;
+
+    &__left {
+      grid-area: left;
+    }
+
+    &__right {
+      grid-area: right;
+    }
+
+    &__center {
+      grid-area: center;
+    }
+  }
+
+  &-welcome {
+    display: flex;
+    min-height: 300px;
+    padding: 25px;
+    background-image: url(./home.jpg);
+    background-size: cover;
+    border-radius: 20px;
+
+    &__text {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+
+    &__right {
+      max-width: 240px;
+      padding: 20px 20px 0;
+    }
+  }
+}

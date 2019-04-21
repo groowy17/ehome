@@ -1,0 +1,52 @@
+.nav {
+  height: 95px;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+
+  &-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 100%;
+    padding: 0 40px;
+  }
+
+  &-brand {
+    display: flex;
+    font-size: 25px;
+    padding-right: 40px;
+    white-space: nowrap;
+
+    &__letter {
+      font-weight: bold;
+      color: tomato;
+      font-family: 'Brush Script MT', sans-serif;
+      font-size: 30px;
+    }
+  }
+
+  &-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+
+    &__link {
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      text-decoration: none;
+      color: #333;
+      opacity: 0.6;
+      font-weight: bold;
+      line-height: 20px;
+
+      &_active {
+        opacity: 1;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
