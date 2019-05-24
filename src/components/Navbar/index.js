@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
 import './Navbar.scss';
+import { ReactComponent as IconList } from './icons/icon_list.svg';
+import SideMenu from '../../components/SideMenu';
 
 class Navbar extends Component {
+  state = {
+    isOpen: false
+  };
+
+  handleSideMenu = event => {
+    event.preventDefault();
+    this.setState({ isOpen: !this.state.isOpen });
+
+    if (!this.state.isOpen) {
+      document.body.classList = ['overlay'];
+    } else {
+      document.body.classList = [];
+    }
+  };
+
   render() {
     return (
       <nav className="nav">
@@ -19,6 +36,17 @@ class Navbar extends Component {
             <a href="/#" className="nav-menu__link">
               Сценарии
             </a>
+          </div>
+          <div className="nav-sidebar">
+            <div className="nav-sidebar__icon">
+              <a href="/#" onClick={this.handleSideMenu}>
+                <IconList />
+              </a>
+            </div>
+            <SideMenu
+              isOpen={this.state.isOpen}
+              handleSideMenu={this.handleSideMenu}
+            />
           </div>
         </div>
       </nav>

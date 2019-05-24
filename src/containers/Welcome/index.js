@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import Card from '../../components/Card';
 import './Welcome.scss';
+import cards from '../../utils/cards';
 
 class Welcome extends Component {
   render() {
+    const welcomeCards = cards.filter(card => {
+      return card.location === 'welcome';
+    });
+
     return (
       <div className="welcome">
         <div className="welcome-info">
@@ -23,7 +28,17 @@ class Welcome extends Component {
           </div>
         </div>
         <div className="welcome-right">
-          <Card />
+          {welcomeCards.map(card => {
+            return (
+              <Card
+                key={card.id}
+                name={card.name}
+                sub={card.sub}
+                isActive={card.active}
+                type={card.type}
+              />
+            );
+          })}
         </div>
       </div>
     );

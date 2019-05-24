@@ -1,3 +1,5 @@
+@import '../../utils/mixin.scss';
+
 .modal {
   &-overlay {
     position: fixed;
@@ -5,9 +7,116 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #000;
-    opacity: 0.3;
-    z-index: 1;
-    filter: blur(2px);
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  &-body {
+    width: 630px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 20px;
+
+    &__h2 {
+      font-size: 27px;
+      margin: 0 0 5px 0;
+    }
+
+    &__subheader {
+      font-size: 14px;
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    margin-top: 20px;
+
+    &__button {
+      border: 0;
+      background-color: #fff;
+      height: 60px;
+      width: 100%;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &_accept {
+        background-color: #ffcd00;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  @include mediaMobileS {
+    &-body {
+      width: calc(100vw - 40px);
+      height: calc(100vh - 190px);
+      padding: 20px;
+
+      &__h2 {
+        font-size: 18px;
+      }
+
+      &__subheader {
+        font-size: 12px;
+        margin: 0 0 5px 0;
+      }
+
+      &__main {
+        height: calc(100% - 50px);
+
+        .range {
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap;
+
+          &-filter {
+            width: 100%;
+            margin: 0 0 15px 0;
+          }
+
+          &-box {
+            height: calc(100% - 55px);
+            position: relative;
+          }
+
+          &-input {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            width: calc(100vh - 350px);
+          }
+        }
+
+        .tabs-list {
+          @include scrollContainer;
+
+          &__link {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+
+    &-footer {
+      display: block;
+      margin-top: 15px;
+
+      &__button {
+        &_accept {
+          margin: 0 0 15px 0;
+        }
+      }
+    }
   }
 }

@@ -1,7 +1,46 @@
 .card {
   width: 200px;
-  height: 100px;
+  min-height: 100px;
   background-color: #f7f7f7;
   border-radius: 20px;
   cursor: pointer;
+  padding: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5);
+    transition: all 0.3s;
+  }
+
+  &__header,
+  &__sub,
+  &__icon {
+    width: 100%;
+  }
+
+  &__icon {
+    align-self: flex-start;
+  }
+
+  &__header {
+    font-size: 14px;
+    font-weight: bold;
+    align-self: flex-end;
+    margin-bottom: 3px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__sub {
+    font-size: 12px;
+    color: #858585;
+    align-self: flex-end;
+  }
 }

@@ -1,0 +1,32 @@
+.tabs {
+  &-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    &__item {
+      list-style: none;
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__link {
+      display: block;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 20px;
+      background-color: #f2f1f0;
+      color: inherit;
+      text-decoration: none;
+
+      &_active {
+        background-color: #ffd93e;
+      }
+    }
+  }
+}

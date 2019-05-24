@@ -1,0 +1,39 @@
+$width-breakpoint-tablet: 1012px;
+$width-breakpoint-mobile: 767px;
+$width-breakpoint-mobile-s: 670px;
+
+@mixin mediaTabletMax {
+  @media screen and (max-width: #{$width-breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin mediaTabletMin {
+  @media screen and (min-width: #{$width-breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin mediaMobile {
+  @media screen and (max-width: #{$width-breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin mediaMobileS {
+  @media screen and (max-width: #{$width-breakpoint-mobile-s}) {
+    @content;
+  }
+}
+
+@mixin scrollContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 0;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,7 +1,14 @@
+@import '../../utils/mixin.scss';
+
 .nav {
   height: 95px;
   width: 100%;
   border-bottom: 1px solid #f0f0f0;
+
+  @include mediaTabletMax {
+    border-bottom: 0;
+    height: auto;
+  }
 
   &-wrapper {
     display: flex;
@@ -9,6 +16,11 @@
     align-items: center;
     height: 100%;
     padding: 0 40px;
+
+    @include mediaTabletMax {
+      padding: 15px 20px;
+      justify-content: space-between;
+    }
   }
 
   &-brand {
@@ -44,9 +56,20 @@
         opacity: 1;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         opacity: 1;
       }
+    }
+
+    @include mediaTabletMax {
+      display: none;
+    }
+  }
+
+  &-sidebar {
+    @include mediaTabletMin {
+      display: none;
     }
   }
 }

@@ -1,6 +1,12 @@
+@import '../../utils/mixin.scss';
+
 .main {
   &-container {
-    padding: 30px 40px;
+    padding: 30px 0 30px 40px;
+
+    @include mediaTabletMax {
+      padding: 0 0 20px 20px;
+    }
   }
 
   &-h2 {
@@ -15,16 +21,86 @@
       'center center';
     grid-template-columns: 1fr 1fr;
 
+    @include mediaTabletMax {
+      display: block;
+    }
+
     &__left {
       grid-area: left;
+      padding-right: 25px;
+
+      @include mediaTabletMax {
+        padding-right: 20px;
+
+        .main-h2 {
+          display: none;
+        }
+      }
     }
 
     &__right {
       grid-area: right;
+
+      @include mediaTabletMax {
+        margin-top: 30px;
+
+        .main-h2 {
+          margin: 0 0 10px;
+        }
+      }
     }
 
     &__center {
       grid-area: center;
+      padding: 35px 0 0 0;
+
+      @include mediaTabletMax {
+        padding: 20px 0 0;
+
+        .main-h2 {
+          margin: 0 0 10px;
+        }
+      }
+    }
+  }
+
+  &-cards {
+    display: flex;
+    flex-flow: row wrap;
+
+    @include mediaTabletMax {
+      width: calc(100vw - 20px);
+      @include scrollContainer;
+    }
+
+    .card {
+      margin: 0 15px 15px 0;
+
+      @include mediaTabletMax {
+        margin: 0 15px 0 0;
+        min-width: 200px;
+        flex: 0 0 auto;
+      }
+    }
+  }
+
+  &-center {
+    width: 100%;
+
+    @include scrollContainer;
+
+    @include mediaTabletMax {
+      width: calc(100vw - 20px);
+    }
+
+    .card {
+      margin-right: 15px;
+      min-width: 200px;
+      flex: 0 0 auto;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
